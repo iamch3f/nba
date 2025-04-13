@@ -15,17 +15,30 @@ Bu proje, [NBA'in resmi istatistik sayfasından](https://www.nba.com/stats/playe
 
 .
 ├── data/                     # Script'ler tarafından oluşturulan ve kullanılan veriler
+
 │   ├── nba_player_stats.csv
+
 │   ├── nba_player_stats.json
+
 │   ├── nba_player_stats_with_images.csv
+
 │   ├── nba_stats_page.html
+
 │   └── processed_players_for_visualization.csv
+
+
 ├── scrape_nba_stats.py       # NBA web sitesinden verileri çeker ve kaydeder.
+
 ├── process_data.py           # Ham veriyi işler.
+
 ├── add_avatars.py            # Oyuncu avatarlarını bulur ve CSV'ye ekler.
+
 ├── create_chart.py           # İşlenmiş veriden Altair grafiğini oluşturur.
+
 ├── finalize_visualization.py # Oluşturulan grafiği sonlandırır ve kaydeder.
+
 ├── requirements.txt          # Gerekli Python kütüphaneleri (Aşağıya bakın)
+
 └── README.md                 # Bu dosya
 
 
