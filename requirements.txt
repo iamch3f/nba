@@ -1,0 +1,7 @@
+pandas
+requests
+beautifulsoup4
+Pillow
+altair
+altair-saver
+selenium
