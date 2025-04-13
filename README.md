@@ -58,59 +58,55 @@ Projeyi çalıştırmak için aşağıdaki Python kütüphanelerine ihtiyacını
 
 Bu kütüphaneleri yüklemek için bir `requirements.txt` dosyası oluşturup aşağıdaki komutu kullanabilirsiniz:
 
-```bash
+
 pip install -r requirements.txt
 
 requirements.txt içeriği:
 
-pandas
-requests
-beautifulsoup4
-Pillow
-altair
-altair-saver
-selenium # veya vl-convert kurulumu için gerekli diğer adımlar
+    pandas
+    requests
+    beautifulsoup4
+    Pillow
+    altair
+    altair-saver
+    selenium # veya vl-convert kurulumu için gerekli diğer adımlar
 
 Not: altair_saver'ın çalışması için sisteminizde vl-convert (ve dolayısıyla Node.js) veya selenium (ve bir webdriver) kurulu olması gerekebilir. Kurulum detayları için Altair Saver dokümantasyonuna bakınız.
 Kullanım
 
 Grafiği oluşturmak için script'leri aşağıdaki sırayla çalıştırmanız gerekmektedir:
 
-    Veriyi Çekme:
-    Bash
+Veriyi Çekme:
 
-python scrape_nba_stats.py
+    python scrape_nba_stats.py
 
 Bu script, data klasörü içine nba_stats_page.html, nba_player_stats.csv ve nba_player_stats.json dosyalarını oluşturur/günceller.
 
 Veriyi İşleme:
-Bash
 
-python process_data.py
+    python process_data.py
 
 Bu script, nba_player_stats.csv dosyasını okur ve işler. (Script'in çıktıyı nereye kaydettiğini kontrol edin, muhtemelen üzerine yazar veya yeni bir dosya oluşturur).
 
 Avatarları Ekleme:
-Bash
 
-python add_avatars.py
+
+    python add_avatars.py
 
 Bu script, işlenmiş oyuncu verisine avatarları ekler ve data/nba_player_stats_with_images.csv dosyasını oluşturur/günceller.
 
 Grafiği Oluşturma:
-Bash
 
-python create_chart.py
+
+    python create_chart.py
 
 Bu script, avatarlı veriyi kullanarak Altair grafiğini hazırlar ve data/processed_players_for_visualization.csv gibi bir ara dosya oluşturabilir.
 
 Grafiği Kaydetme:
-Bash
+
 
     python finalize_visualization.py
+Bu script, oluşturulan Altair grafiğini alır ve muhtemelen nba_player_stats_visualization.html (veya benzer bir isimde) bir HTML dosyası olarak kaydeder.
 
-    Bu script, oluşturulan Altair grafiğini alır ve muhtemelen nba_player_stats_visualization.html (veya benzer bir isimde) bir HTML dosyası olarak kaydeder.
-
-Çıktı
 
 Script'ler başarıyla çalıştırıldıktan sonra, projenin ana dizininde (veya finalize_visualization.py script'inde belirtilen yerde) nba_player_stats_visualization.html gibi bir HTML dosyası bulacaksınız. Bu dosya, oyuncu istatistiklerini gösteren etkileşimli grafiği içerir.
